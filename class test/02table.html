@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: lightgray;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        table.a{
+            width: 80vw;
+            margin-bottom: 20vh;
+            border: 2px solid white;
+            border-spacing: 20px;
+            border-collapse: collapse;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+            caption-side: bottom;
+        }
+        table.a caption{
+            text-align: right;
+        }
+
+        table.b{
+            width: 80vw;
+            margin-bottom: 20vh;
+            box-shadow: 5px 5px 5px rgba(0,0,0,.2);
+        }
+        
+        table td{
+            height: 10vh;
+            background-color: rgba(255,255,255,.5);
+            text-align: center;
+            font-weight: 900;
+        }
+
+        table tr:nth-of-type(odd){
+            background-color: red;
+        }
+
+        table th{
+            margin: 20px;
+            height: 10vh;
+            background-color: rgb(69, 84, 214);
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <table class="a">
+        <caption>我是標題喔:)</caption>
+        <thead>
+            <tr>
+                <th scope="col">姓名</th>
+                <th scope="col">標題</th>
+                <th scope="col">標題</th>
+                <th scope="col">標題</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">小名</th>
+                <td rowspan="2" style="background-color:tomato;">row span</td>
+                <td>資料</td>
+                <td>資料</td>
+            </tr>  
+            <tr>
+                <th scope="row">小美</th>
+                <td>資料</td>
+                <td>資料</td>
+            </tr>  
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">備註</th>
+                <td colspan="3" style="background-color:wheat;">col span</td>
+            </tr>   
+        </tfoot>
+    </table>
+
+    <table class="b">
+        <caption>我是標題喔:)</caption>
+        <thead>
+            <tr>
+                <th scope="col">姓名</th>
+                <th scope="col">標題</th>
+                <th scope="col">標題</th>
+                <th scope="col">標題</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">小名</th>
+                <td rowspan="2" style="background-color:tomato;">row span</td>
+                <td>資料</td>
+                <td>資料</td>
+            </tr>  
+            <tr>
+                <th scope="row">小美</th>
+                <td>資料</td>
+                <td>資料</td>
+            </tr>  
+            <tr>
+                <th scope="row">小美</th>
+                <td>資料</td>
+                <td>資料</td>
+                <td>資料</td>>
+            </tr> 
+            <tr>
+                <th scope="row">小美</th>
+                <td>資料</td>
+                <td>資料</td>
+                <td>資料</td>
+            </tr> 
+            <tr>
+                <th scope="row">小美</th>
+                <td>資料</td>
+                <td>資料</td>
+                <td>資料</td>
+            </tr> 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row">備註</th>
+                <td colspan="3" style="background-color:wheat;">col span</td>
+            </tr>   
+        </tfoot>
+    </table>
+</body>
+</html>
