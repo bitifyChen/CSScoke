@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input:out-of-range {
+        background-color: pink;
+    }
+
+    input:in-range {
+        background-color:
+    }
+    body{
+        display: flex;
+        min-height: 100vh;
+        background-color: lightgray;
+        justify-content: center;
+        align-items: center;
+    }
+    form{
+        width: 80%;
+        background-color: white;    
+        margin: 10px;
+        padding: 10px;
+    }
+    textarea{
+        width: 50%;
+        max-width: 100%;
+    }
+</style>
+
+<body>
+    <form action="">
+        <div class="">
+            <label>姓名
+                <input type="text">
+            </label>
+        </div>
+
+        <div class="">
+            <label>密碼
+                <input type="password">
+            </label>
+        </div>
+
+        <div class="">
+            <label>年齡
+                <input type="number" min="10" max="99">
+            </label>
+        </div>
+
+        <div class="">
+            <label>電話
+                <input type="tel">
+            </label>
+        </div>
+
+        <div class="">
+            <label>日期
+                <input type="date">
+            </label>
+        </div>
+
+        <div class="">
+            <label>時間
+                <input type="time">
+            </label>
+        </div>
+
+        <div class="">
+            <label>信箱
+                <input type="email">
+            </label>
+        </div>
+
+        <div class="">
+            性別
+            <label><input type="radio" name="sex">男</label>
+            <label><input type="radio" name="sex">女</label>
+        </div>
+        <div class="">
+            興趣
+            <label><input type="checkbox">男</label>
+            <label><input type="checkbox">女</label>
+        </div>
+        <div class="">
+            <label>上傳
+                <input type="file">
+            </label>
+        </div>
+
+        <div class="">
+            <label>
+                色彩
+                <input type="color">
+            </label>
+        </div>
+
+        <div class="">
+            <label>
+                range
+                <input type="range" min="1" max="9">
+            </label>
+        </div>
+
+        <div class="">
+            <label>
+                搜尋
+                <input type="search">
+            </label>
+        </div>
+
+        <div class="">
+            <textarea name="" id="" rows="2"></textarea>
+        </div>
+        <div class="">
+            <input type="reset">
+            <input type="submit">
+            <input type="button" value="我是按鈕">
+            <button>按鈕</button>
+        </div>
+    </form>
+</body>
+
+</html>

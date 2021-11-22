@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .items{
+        display: flex;
+    }
+    .item{
+        width: 400px;
+        padding: 20px;
+        border: 2px solid orangered;
+        background-color: white;
+        position: relative;
+        margin: 20px;
+    }
+    .item img{
+        width: 100%;
+    }
+    .item .tag{
+        padding: 10px 20px;
+        position: absolute;
+        background-color: orange;
+        top: 10px;
+        left: -10px;
+    }
+    .item .tag::after{
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: rgb(219, 145, 8);
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        border-bottom-left-radius:10px;
+        z-index: -1;
+    }
+</style>
+
+<body>
+    <div class="items">
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="">
+            <div class="tag">現正特價</div>
+            <h2 class="title">泡麵</h2>
+            <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sed. Corrupti earum eaque ex deleniti debitis eum repellendus magnam quidem, expedita, cupiditate deserunt quae dolor sequi ipsa. Esse, distinctio eveniet?</p>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="">
+            <div class="tag">現正特價</div>
+            <h2 class="title">泡麵</h2>
+            <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sed. Corrupti earum eaque ex deleniti debitis eum repellendus magnam quidem, expedita, cupiditate deserunt quae dolor sequi ipsa. Esse, distinctio eveniet?</p>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="">
+            <div class="tag">現正特價</div>
+            <h2 class="title">泡麵</h2>
+            <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sed. Corrupti earum eaque ex deleniti debitis eum repellendus magnam quidem, expedita, cupiditate deserunt quae dolor sequi ipsa. Esse, distinctio eveniet?</p>
+        </div>
+        <div class="item">
+            <img src="https://via.placeholder.com/150" alt="">
+            <div class="tag">現正特價</div>
+            <h2 class="title">泡麵</h2>
+            <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, sed. Corrupti earum eaque ex deleniti debitis eum repellendus magnam quidem, expedita, cupiditate deserunt quae dolor sequi ipsa. Esse, distinctio eveniet?</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

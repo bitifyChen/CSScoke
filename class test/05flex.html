@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .flex {
+        width: 800px;
+        display: flex;
+        align-items: stretch;
+        border: 2px green solid;
+        flex-wrap: wrap;
+    }
+
+    .person {
+        width: 356px;
+        border: 2px solid red;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .person-title {
+        font-size: 30px;
+    }
+
+    .person-info {
+        font-size: 20px;
+
+    }
+
+    .person-class {
+        font-size: 20px;
+        margin-top: auto;
+        border:2px solid orange;
+    }
+</style>
+
+<body>
+
+    <div class="flex">
+        <div class="person">
+            <div class="person-title">
+                title
+            </div>
+            <div class="person-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quidem nam alias porro ducimus, ad,
+                ipsum architecto nostrum accusantium fugiat quisquam veritatis? Consectetur quam dolor unde itaque
+                asperiores animi voluptates!
+            </div>
+            <div class="person-class">
+                class
+            </div>
+        </div>
+        <div class="person">
+            <div class="person-title">
+                title
+            </div>
+            <div class="person-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ip
+            </div>
+            <div class="person-class">
+                class
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
