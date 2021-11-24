@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TOYOTA</title>
   </head>
   <style>
     /*-----Google font-----*/
@@ -15,6 +15,7 @@
       padding: 0;
       box-sizing: border-box;
       font-size: 10px;
+      border: 1px solid red;
     }
     section {
       position: relative;
@@ -140,19 +141,19 @@
     }
 
     /*-----advantage right-----*/
-    .advantage.right .title,
-    .advantage.right .renew {
+    .advantage:nth-of-type(even) .title,
+    .advantage:nth-of-type(even) .renew {
       margin-left: auto;
     }
-    .advantage.right .title h2 {
+    .advantage:nth-of-type(even) .title h2 {
       justify-content: flex-end;
     }
 
-    .advantage.right img {
+    .advantage:nth-of-type(even) img {
       left: 0;
     }
 
-    .advantage.right .title h2::before {
+    .advantage:nth-of-type(even) .title h2::before {
       order: 1;
     }
 
@@ -166,10 +167,10 @@
       animation:rtl-leave 2s forwards;
     }
     /*.advantage.right*/
-    .advantage.right .title,.advantage.right.active .renew {
+    .advantage:nth-of-type(even) .title,.advantage:nth-of-type(even).active .renew {
       animation:rtl-leave 2s forwards;
     }
-    .advantage.right img {
+    .advantage:nth-of-type(even) img {
       animation:ltr-leave 2s forwards;
     }
     /*----------active----------*/
@@ -187,15 +188,15 @@
     }
 
     /*.advantage.right*/
-    .advantage.right.active .title{
+    .advantage:nth-of-type(even).active .title{
       animation:rtl 1s forwards;
     }
 
-    .advantage.right.active .renew {
+    .advantage:nth-of-type(even).active .renew {
       animation:rtl 1.5s forwards;
     }
 
-    .advantage.right.active img {
+    .advantage:nth-of-type(even).active img {
       animation:ltr 1.5s forwards;
     }
     /*----------keyframes----------*/
@@ -279,7 +280,7 @@
         <img src="https://www.toyota.com.tw/asset/img/tech_tnga/advantage-1-video-button-bg.png?9e068d9b" alt="" />
       </div>
 
-      <div class="advantage right">
+      <div class="advantage">
         <div class="title">
           <div class="title-name">
             <h2 data-order="02">安全守護</h2>
@@ -340,7 +341,7 @@
         <img src="https://www.toyota.com.tw/asset/img/tech_tnga/advantage-3-video-button-bg.png?705545c7" alt="" />
       </div>
 
-      <div class="advantage right">
+      <div class="advantage">
         <div class="title">
           <div class="title-name">
             <h2 data-order="04">以人為本</h2>
