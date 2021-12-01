@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+      section.work-step {
+        position: relative;
+      }
+      section.work-step .order {
+        transition: opacity 0.5s linear;
+        opacity: 1 !important;
+        position: static !important;
+      }
+      section.work-step .order img.arrow {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      section.work-step .order img.arrow.dot {
+        background-image: url("image/arrow-4.svg") no-repeat;
+        position: absolute;
+        top: 200px;
+        bottom: 400px;
+        left: 600px;
+        right: 900px;
+      }
+      .arrow-box {
+        position: absolute;
+        z-index: -1;
+        width: 200px;
+        height: 0;
+        top: 0;
+        left: 0;
+        display: flex;
+      }
+      .arrow-box img {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <section style="min-height: 900px; background-color: red"></section>
+    
+    <script>
+      //當網頁物件跑完成
+      window.addEventListener("load", workStep);
+      //當網頁大小修改
+      window.addEventListener('resize', workStep);
+
+      //main
+      function workStep() {
+        let workStepToTop = document.querySelector("section.work-step").getBoundingClientRect().y;
+        const arrowBox = document.querySelector(".arrow-box");
+
+        function getItem(topItem, bottomItem, item) {
+          //top-item
+          const topItemW = topItem.offsetWidth;
+          const topItemH = topItem.offsetHeight;
+          const topItemX = topItem.getBoundingClientRect().x + topItemW / 2;
+          const topItemY = topItem.getBoundingClientRect().y + topItemH / 2;
+
+          //bottom-item
+          const bottomItemW = bottomItem.offsetWidth;
+          const bottomItemH = bottomItem.offsetHeight;
+          const bottomItemX = bottomItem.getBoundingClientRect().x + bottomItemW / 2;
+          const bottomItemY = bottomItem.getBoundingClientRect().y + bottomItemH / 2;
+
+          //this-item
+          //--set X
+          const itemX = Math.min(topItemX, bottomItemX);
+          //--set Y
+          const itemY = Math.min(topItemY, bottomItemY) - workStepToTop;
+          //--set W
+          const itemW = Math.abs(topItemX - bottomItemX);
+          //--set H
+          const itemH = Math.abs(topItemY - bottomItemY);
+          arrowBoxSet(item, itemX, itemY, itemW, itemH);
+        }
+
+        function arrowBoxSet(item, x, y, w, h) {
+          item.style.left = x + "px";
+          item.style.top = y + "px";
+          item.style.width = w + "px";
+          item.style.height = h + "px";
+        }
+
+        const itemOrder = document.querySelectorAll("[data-relative]");
+        const itemCenter = document.querySelectorAll("div[data-position]");
+        if (itemOrder.length - 1 == itemCenter.length) {
+          let itemOrderNum = itemOrder.length;
+          for (let i = 0; i < itemOrderNum - 1; i++) {
+            getItem(itemOrder[i], itemOrder[i + 1], itemCenter[i]);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

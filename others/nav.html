@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      body {
+        min-height: 100vh;
+        background-color: #eee;
+      }
+      nav {
+        background-color: #0008;
+        color: #fff;
+        position: relative;
+      }
+
+      nav > ul.tab,nav ul.tab-sub {
+        display: flex;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav > ul.tab > li {
+        line-height: 70px;
+        width: 10%;
+      }
+
+      nav > ul.tab > li:nth-child(4) ,nav ul.tab-sub > li:nth-child(4){
+        margin-left: 140px;
+      }
+      
+      nav ul.tab-sub {
+        position: absolute;
+        top: -1000%;
+        background-color: #0007;
+        transition: 1s;
+      }
+
+      nav ul.tab-sub > li {
+        line-height: 70px;
+        text-align: center;
+        width: 10%;
+      }
+
+      /*Open*/
+      nav ul.tab-sub:hover,nav ul.tab-sub.open {
+        top: 100%;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="tab">
+        <li>會員專區</li>
+        <li>最新消息</li>
+        <li>排行榜</li>
+        <li>會員專區</li>
+        <li>最新消息</li>
+        <li>排行榜</li>
+      </ul>
+      <ul class="tab-sub">
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>XXXX</li>
+            <li>XXXX</li>
+            <li>XXXX</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <script>
+      const tabItems = document.querySelectorAll("ul.tab li");
+      const subTab = document.querySelector("ul.tab-sub");
+      tabItems.forEach((tabItem) => {
+        tabItem.addEventListener("mouseenter", () => {
+          subTab.classList.add("open");
+        });
+        tabItem.addEventListener("mouseleave", () => {
+          subTab.classList.remove("open");
+        });
+      });
+    </script>
+  </body>
+</html>
