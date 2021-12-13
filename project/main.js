@@ -1,3 +1,9 @@
+//Window Scroll
+window.addEventListener("scroll", function () {
+  enterCheck();
+  toTopCheck();
+});
+
 //Section.step
 const advantages = document.querySelectorAll(".fade");
 function enterCheck() {
@@ -11,9 +17,6 @@ function enterCheck() {
     }
   });
 }
-window.addEventListener("scroll", function () {
-  enterCheck();
-});
 enterCheck();
 
 //Section.stop arrow
@@ -24,7 +27,7 @@ window.addEventListener("resize", workStep);
 
 //main
 function workStep() {
-  let workStepToTop = document.querySelector("section.work-step").getBoundingClientRect().y;
+  let workStepToTop = document.querySelector("section.section-workstep").getBoundingClientRect().y;
   const arrowBox = document.querySelector(".arrow-box");
 
   function getItem(topItem, bottomItem, item) {
@@ -90,3 +93,22 @@ counters.forEach((counter) => {
 
   animate();
 })
+
+
+//to.Top
+const body = document.querySelector('body')
+function toTopCheck(){
+  const bodyToTop = document.querySelector('body').getBoundingClientRect().y;
+  if (bodyToTop < -50){
+    body.classList.add('no-top');
+  }else{
+    body.classList.remove('no-top');
+  }
+}
+
+function backToTop(){
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
