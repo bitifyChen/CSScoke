@@ -175,7 +175,7 @@ form .input-group button {
 }
 
 /*-----Nav-----*/
-nav {
+header {
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -184,36 +184,32 @@ nav {
   z-index: 999;
 }
 
-nav .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+header .container {
   display: flex;
   align-items: center;
 }
 
-nav.no-top {
+header.no-top {
   -webkit-box-shadow: 0px 8px 32px 0px var(--main-gray);
   box-shadow: 0px 8px 32px 0px var(--main-gray);
 }
+header nav{
+  flex-grow: 1;
+}
 
-nav ul > a {
+header nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header nav ul li a {
+  position: relative;
   height: 55px;
   width: auto;
-}
-
-nav ul {
-  margin-left: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-nav ul li {
-  position: relative;
   margin: 0px 20px;
 }
 
-nav ul li::after {
+header nav ul li a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -224,11 +220,11 @@ nav ul li::after {
   opacity: 0;
 }
 
-nav ul li:hover::after {
+header nav ul li a:hover::after {
   opacity: 1;
-  -webkit-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
 }
+
 /*----footer-----*/
 footer .footer-logo img {
   margin-bottom: 40px;
@@ -322,40 +318,40 @@ section {
 }
 
 /*----Base-----*/
-section.base .container {
+section.section-base .container {
   display: flex;
   align-items: center;
 }
 
-section.base .container > div {
+section.section-base .container > div {
   width: 50%;
 }
 
-section.base .info {
+section.section-base .info {
   padding: 0 15% 0 0;
 }
 
-section.base p {
+section.section-base p {
   margin: 30px 0px;
 }
-section.base .info-pic img {
+section.section-base .info-pic img {
   width: 100%;
 }
 
-section.base .info .info-btn-list {
+section.section-base .info .info-btn-list {
   display: flex;
   margin: 20px 0px;
 }
 
-section.right .container {
+section.reverse .container {
   flex-direction: row-reverse;
 }
 
-section.right .info {
+section.reverse .info {
   padding: 0 0 0 15%;
 }
 
-section.base:nth-of-type(1) {
+section.section-base:nth-of-type(1) {
   background: url("image/cloud-1.svg") no-repeat top center, url("image/cloud-2.svg") no-repeat bottom left;
 }
 
@@ -412,32 +408,35 @@ section.section-to-contact .info-pic img {
   width: 80%;
 }
 
-/*----results-----*/
-section.section-results {
-  background: url("image/cloud-7.svg") no-repeat top 40px right,
-    url("image/cloud-8.svg") no-repeat top 100px right 100px, url("image/cloud-9.svg") no-repeat bottom 100px right 30px,
+/*----advantage-----*/
+section.section-advantage {
+  background: 
+    url("image/cloud-7.svg") no-repeat top 40px right,
+    url("image/cloud-8.svg") no-repeat top 100px right 100px, 
+    url("image/cloud-9.svg") no-repeat bottom 100px right 30px,
     #2570ff;
   color: white;
   padding-bottom: 70px;
 }
-section.section-results .container {
+section.section-advantage .container {
   flex-wrap: wrap;
 }
-section.section-results .info {
+section.section-advantage .container .info {
+  width: 40%;
   padding: 0px 10% 0px 30px;
 }
 
-section.section-results .info p {
+section.section-advantage .info p {
   color: white;
 }
 
-section.section-results .result-cards {
+section.section-advantage .advantages {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
 }
 
-section.section-results .result-cards .card {
+section.section-advantage .advantages .advantage{
   width: calc(50% - 30px);
   margin: 15px;
   padding: 40px;
@@ -445,20 +444,20 @@ section.section-results .result-cards .card {
   background-color: rgb(255 255 255 /0.2);
 }
 
-section.section-results .result-cards .card span {
+section.section-advantage .advantages .advantage span {
   font-size: 50px;
   font-weight: 900;
 }
 
-section.section-results .result-cards .card span.plus::after {
+section.section-advantage .advantages .advantage span.plus::after {
   content: "+";
 }
 
-section.section-results .result-cards .card span.percentage::after {
+section.section-advantage .advantages .advantage span.percentage::after {
   content: "%";
 }
 
-section.section-results .result-cards .card p {
+section.section-advantage .advantages .advantage p {
   color: white;
   margin-top: 20px;
 }
@@ -479,6 +478,7 @@ section.section-workstep h2 {
   padding-bottom: 40px;
 }
 section.section-workstep .step {
+  padding: 20px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -524,41 +524,42 @@ section.section-workstep .arrow-box {
 section.section-workstep .arrow-box img {
   display: block;
   margin: auto;
+  max-width: 100%;
 }
 
 /*----projects-----*/
 
-section.section-projects {
+section.section-project {
   background: url("image/cloud-13.svg") no-repeat top 40% left, #f9fbff;
 }
-section.section-projects .title {
+section.section-project .title {
   display: flex;
   margin: 40px 0px;
   align-items: flex-end;
 }
 
-section.section-projects .title h2 {
+section.section-project .title h2 {
   margin-right: auto;
   padding-left: 15px;
   width: 40%;
 }
 
-section.section-projects .project-cards {
+section.section-project .projects {
   display: flex;
   flex-wrap: wrap;
 }
 
-section.section-projects .project-cards .card {
+section.section-project .projects .project {
   width: 385px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-section.section-projects .project-cards .card + .card {
+section.section-project .projects .project + .project {
   margin-left: 22.5px;
 }
 
-section.section-projects .project-cards .card .card-info {
+section.section-project .projects .project .project-info {
   padding: 60px 30px;
   background-color: var(--main-color);
   color: white;
@@ -573,23 +574,23 @@ section.section-projects .project-cards .card .card-info {
   opacity: 0;
   transition: opacity 0.3s linear;
 }
-section.section-projects .project-cards .card:hover .card-info {
+section.section-project .projects .project:hover .project-info {
   opacity: 0.95;
   transition: opacity 0.3s linear;
 }
 
-section.section-projects .project-cards .card .card-info h3 {
+section.section-project .projects .project .project-info .title {
   font-size: 38px;
 }
-section.section-projects .project-cards .card .card-info a {
+section.section-project .projects .project .project-info .link {
   font-size: 12px;
   font-weight: 900;
 }
-section.section-projects .project-cards .card .card-info a:hover {
+section.section-project .projects .project .project-info .link:hover {
   color: var(--main-gray);
 }
 
-section.section-projects .project-cards .card img {
+section.section-project .projects .project img {
   width: 100%;
   height: auto;
 }
@@ -702,7 +703,7 @@ body.no-top #toTop {
 }
 
 /*----Nav Shadow----*/
-body.no-top nav::after{
+body.no-top header::after{
   content: '';
   position: absolute;
   top: 100%;

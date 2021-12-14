@@ -1,17 +1,30 @@
 //Window Scroll
 window.addEventListener("scroll", function () {
-  enterCheck();
-  toTopCheck();
+  enterCheck(); //fade active
+  toTopCheck(); //to top and nav shadow
 });
 
-//Section.step
+//Window Load
+window.addEventListener("load", workStep); //Section.stop arrow
+//Window resize
+window.addEventListener("resize", workStep); //Section.stop arrow
+
+//---【Animation】 ---
+//fade
 const advantages = document.querySelectorAll(".fade");
 function enterCheck() {
   const windowHigh = window.innerHeight;
   advantages.forEach((advantage) => {
     const toTopHight = advantage.getBoundingClientRect().y;
+    let fadeDelay = 0
     if (toTopHight < windowHigh / 1.25) {
-      advantage.classList.add("active");
+      if(advantage.getAttribute('data-fade-delay')){
+        fadeDelay = advantage.getAttribute('data-fade-delay');
+      }
+      setTimeout(function(){
+        advantage.classList.add("active");
+      },fadeDelay);
+    
     } else {
       advantage.classList.remove("active");
     }
@@ -19,13 +32,8 @@ function enterCheck() {
 }
 enterCheck();
 
-//Section.stop arrow
-//當網頁物件跑完成
-window.addEventListener("load", workStep);
-//當網頁大小修改
-window.addEventListener("resize", workStep);
 
-//main
+//---【Section-work step】 ---
 function workStep() {
   let workStepToTop = document.querySelector("section.section-workstep").getBoundingClientRect().y;
   const arrowBox = document.querySelector(".arrow-box");
@@ -72,8 +80,7 @@ function workStep() {
   }
 }
 
-
-//Section.results
+//---【Section-result】 ---
 const counters = document.querySelectorAll("[data-end]");
 const speed = 500;
 
@@ -95,8 +102,9 @@ counters.forEach((counter) => {
 })
 
 
-//to.Top
+//---【Base-to top】 ---
 const body = document.querySelector('body')
+//add .no-top class while page not on top
 function toTopCheck(){
   const bodyToTop = document.querySelector('body').getBoundingClientRect().y;
   if (bodyToTop < -50){
@@ -106,6 +114,7 @@ function toTopCheck(){
   }
 }
 
+//back to top function
 function backToTop(){
   window.scrollTo({
     top: 0,

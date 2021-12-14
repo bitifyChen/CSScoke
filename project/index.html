@@ -14,22 +14,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="nav">
+    <header>
       <div class="container">
-        <a href="#"><img src="image/logo.png" alt="" /></a>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Case studio</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-        <a href="#"><button class="btn-white">SUBSCRIBE</button></a>
+        <div class="logo">
+          <h1 class="sr-only">Maikon</h1>
+          <a href="#"><img src="image/logo.png" alt="" /></a>
+        </div>
+        <nav class="main">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Case studio</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
+        <div class="nav-btns">
+          <a href="#"><button class="btn-white">SUBSCRIBE</button></a>
+        </div>
       </div>
-    </nav>
-
-    <section class="base">
+    </header>
+    <section class="section-base">
       <div class="container">
         <div class="info">
           <h2>Our creativity is your success</h2>
@@ -45,7 +51,7 @@
       </div>
     </section>
 
-    <section class="base right">
+    <section class="section-base reverse">
       <div class="container">
         <div class="info">
           <h2>Creative challenges are our passion</h2>
@@ -68,7 +74,7 @@
           of creative services
         </h2>
         <div class="cards">
-          <div class="card">
+          <div class="card fade" data-fade-delay="0">
             <h3 class="card-title">Web Design & Brending</h3>
             <p class="card-text">
               A great brand combines design and conveys company’s value messaging to evoke emotion and drive strategy.
@@ -76,7 +82,7 @@
             <img src="image/icon-1.svg" class="card-image" alt="" />
             <a href="#" class="card-link dark-link">READ MORE</a>
           </div>
-          <div class="card">
+          <div class="card fade" data-fade-delay="300">
             <h3 class="card-title">Graphic Design</h3>
             <p class="card-text">
               Rich experience plus unlimited imagination create our successful service discovered by clients.
@@ -84,7 +90,7 @@
             <img src="image/icon-2.svg" class="card-image" alt="" />
             <a href="#" class="card-link dark-link">READ MORE</a>
           </div>
-          <div class="card">
+          <div class="card fade" data-fade-delay="600">
             <h3 class="card-title">Video Production</h3>
             <p class="card-text">
               Creating and handling professional video is our strong point. It plays major role in your digital business
@@ -93,7 +99,7 @@
             <img src="image/icon-3.svg" class="card-image" alt="" />
             <a href="#" class="card-link dark-link">READ MORE</a>
           </div>
-          <div class="card">
+          <div class="card fade" data-fade-delay="600">
             <h3 class="card-title">SEO</h3>
             <p class="card-text">
               We provide everything your site needs to perform at it’s highest capabilities on the major search engines.
@@ -101,7 +107,7 @@
             <img src="image/icon-4.svg" class="card-image" alt="" />
             <a href="#" class="card-link dark-link">READ MORE</a>
           </div>
-          <div class="card">
+          <div class="card fade" data-fade-delay="300">
             <h3 class="card-title">Digital Marketing</h3>
             <p class="card-text">
               We do collateral design, interactive design, hoarding, signage, presentation centres, and more.
@@ -109,7 +115,7 @@
             <img src="image/icon-5.svg" class="card-image" alt="" />
             <a href="#" class="card-link">READ MORE</a>
           </div>
-          <div class="card">
+          <div class="card fade" data-fade-delay="0">
             <h3 class="card-title">Infographics</h3>
             <p class="card-text">
               Turn your data into captivating artwork that will keep your audience engaged. Our team can help you with
@@ -122,7 +128,7 @@
       </div>
     </section>
 
-    <section class="section-to-contact base">
+    <section class="section-to-contact section-base">
       <div class="container">
         <div class="info">
           <h2>If you have any questions, please contact us</h2>
@@ -141,7 +147,7 @@
       </div>
     </section>
 
-    <section class="section-results base right">
+    <section class="section-advantage section-base reverse">
       <div class="container">
         <div class="info">
           <h2>Why choose our studio for your projects?</h2>
@@ -153,24 +159,24 @@
             <button class="btn-white btn-text-light">ORDER SERVICE</button>
           </div>
         </div>
-        <div class="result-cards">
-          <div class="card">
+        <ul class="advantages">
+          <li class="advantage">
             <span class="plus" data-end="1880">0</span>
             <p>Completed projects to the end by our specialists.</p>
-          </div>
-          <div class="card">
+          </li>
+          <li class="advantage">
             <span data-end="56">0</span>
-            <p>Completed projects to the end by our specialists.</p>
-          </div>
-          <div class="card">
+            <p>A large team of the best specialists.</p>
+          </li>
+          <li class="advantage">
             <span class="plus" data-end="2000">0</span>
-            <p>Completed projects to the end by our specialists.</p>
-          </div>
-          <div class="card">
+            <p>Customers who were satisfied with our work.</p>
+          </li>
+          <li class="advantage">
             <span class="percentage" data-end="100">0</span>
-            <p>Completed projects to the end by our specialists.</p>
-          </div>
-        </div>
+            <p>Our values are good organization and result orientation.</p>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -223,6 +229,7 @@
           <img class="image" src="image/home-image-8.svg" alt="" />
           <img class="order fade" src="image/number-05.svg" data-relative="5" alt="" />
         </div>
+
         <!--arrow-->
         <div class="arrow-box fade" data-position="1">
           <img class="arrow" src="image/arrow-1.svg" alt="" />
@@ -236,34 +243,35 @@
         <div class="arrow-box fade" data-position="4">
           <img class="arrow" src="image/arrow-4.svg" alt="" />
         </div>
+
       </div>
     </section>
-
-    <section class="section-projects">
+    <!-- TO DO未來新增 -->
+    <section class="section-project">
       <div class="container">
         <div class="title">
           <h2>Our team's work with Projects</h2>
           <button class="btn-green">ALL PROJECTS</button>
         </div>
-        <div class="project-cards">
-          <div class="card">
-            <div class="card-info">
-              <h3 class="card-title">Minimal Creative "Impuls"</h3>
-              <a href="" class="card-link">VIEW SITE</a>
+        <div class="projects">
+          <div class="project">
+            <div class="project-info">
+              <h3 class="title">Minimal Creative "Impuls"</h3>
+              <a href="" class="link">VIEW SITE</a>
             </div>
             <img src="image/project-1.jpg" alt="" />
           </div>
-          <div class="card">
-            <div class="card-info">
-              <h3 class="card-title">Travel Company "Tour Up"</h3>
-              <a href="" class="card-link">VIEW SITE</a>
+          <div class="project">
+            <div class="project-info">
+              <h3 class="title">Travel Company "Tour Up"</h3>
+              <a href="" class="link">VIEW SITE</a>
             </div>
             <img src="image/project-2.jpg" alt="" />
           </div>
-          <div class="card">
-            <div class="card-info">
-              <h3 class="card-title">Restaurant Pizza "Little Italy"</h3>
-              <a href="" class="card-link">VIEW SITE</a>
+          <div class="project">
+            <div class="project-info">
+              <h3 class="title">Restaurant Pizza "Little Italy"</h3>
+              <a href="" class="link">VIEW SITE</a>
             </div>
             <img src="image/project-3.jpg" alt="" />
           </div>
@@ -281,7 +289,7 @@
             <input type="text" placeholder="Name" />
             <input type="email" placeholder="Email" />
             <textarea placeholder="Message"></textarea>
-            <button class="btn-green">SEND</button>
+            <button type="submit" class="btn-green">SEND</button>
           </form>
         </div>
       </div>
@@ -294,7 +302,7 @@
           <form action="">
             <div class="input-group">
               <input type="email" placeholder="Your email"/>
-              <button class="btn-green">SUBSCRIBE</button>
+              <button type="submit" class="btn-green">SUBSCRIBE</button>
             </div>
           </form>
         </div>
