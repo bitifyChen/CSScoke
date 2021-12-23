@@ -20,6 +20,24 @@ a {
   text-decoration: inherit;
 }
 
+ul {
+  list-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  padding: 1px;
+  overflow: hidden;
+}
+/*----Color----*/
+:root {
+  --main-color: #1fde82;
+  --main-gray: #5d6678;
+  --border-gray: #dcdfe5;
+}
+
+
 .primary-link {
   color: var(--main-color);
 }
@@ -36,23 +54,6 @@ a {
 .dark-link:hover {
   color: var(--main-color);
   transition: color 0.3s linear;
-}
-
-ul {
-  list-style: none;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  padding: 1px;
-  overflow: hidden;
-}
-/*----Color----*/
-:root {
-  --main-color: #1fde82;
-  --main-gray: #5d6678;
-  --border-gray: #dcdfe5;
 }
 
 /*----Font----*/
@@ -239,12 +240,12 @@ footer .footer-logo h4 span {
   color: var(--main-gray);
 }
 
-footer .row {
+footer .footer-boxs {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
 }
-footer .row .col {
+footer .footer-box {
   width: 25%;
   padding: 15px;
 }
@@ -338,21 +339,24 @@ section.section-base .info-pic img {
   width: 100%;
 }
 
-section.section-base .info .info-btn-list {
+section.section-base .info .info-btns {
   display: flex;
   margin: 20px 0px;
 }
 
-section.reverse .container {
+
+/*----Creativity-----*/
+section.section-creativity {
+  background: url("image/cloud-1.svg") no-repeat top center, url("image/cloud-2.svg") no-repeat bottom left;
+}
+
+/*----Challenges-----*/
+section.section-challenges .container {
   flex-direction: row-reverse;
 }
 
-section.reverse .info {
+section.section-challenges .info {
   padding: 0 0 0 15%;
-}
-
-section.section-base:nth-of-type(1) {
-  background: url("image/cloud-1.svg") no-repeat top center, url("image/cloud-2.svg") no-repeat bottom left;
 }
 
 /*----Services-----*/
@@ -366,14 +370,15 @@ section.section-service h2 {
 section.section-service .cards {
   display: flex;
   flex-wrap: wrap;
+  margin: 0px -11.25px;
 }
 
 section.section-service .cards .card {
   display: flex;
   flex-direction: column;
   border-radius: 5px;
-  width: 360px;
-  margin: 15px;
+  width: 385px;
+  margin: 11.25px;
   padding: 45px;
   background-color: white;
   box-shadow: 0 0 20px #989aa123;
@@ -420,6 +425,7 @@ section.section-advantage {
 }
 section.section-advantage .container {
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 section.section-advantage .container .info {
   width: 40%;
@@ -532,13 +538,13 @@ section.section-workstep .arrow-box img {
 section.section-project {
   background: url("image/cloud-13.svg") no-repeat top 40% left, #f9fbff;
 }
-section.section-project .title {
+section.section-project .info {
   display: flex;
   margin: 40px 0px;
   align-items: flex-end;
 }
 
-section.section-project .title h2 {
+section.section-project .info h2 {
   margin-right: auto;
   padding-left: 15px;
   width: 40%;
@@ -547,6 +553,7 @@ section.section-project .title h2 {
 section.section-project .projects {
   display: flex;
   flex-wrap: wrap;
+  margin: 0px -11.25px;
 }
 
 section.section-project .projects .project {
@@ -554,9 +561,7 @@ section.section-project .projects .project {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
-}
-section.section-project .projects .project + .project {
-  margin-left: 22.5px;
+  margin: 11.25px;
 }
 
 section.section-project .projects .project .project-info {
@@ -605,8 +610,12 @@ section.section-contact .container {
   justify-content: space-evenly;
   align-items: center;
 }
-section.section-contact img {
+section.section-contact .info-pic {
   width: 40%;
+}
+section.section-contact .info-pic img{
+  width: 100%;
+  height: auto;
 }
 section.section-contact .contact-box {
   display: flex;
