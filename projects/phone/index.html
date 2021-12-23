@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .features .feature{
+            
+        }
+        .feature-pictures {
+            width: 200px;
+            position: relative;
+        }
+        .feature-pictures :after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/iphone.png') no-repeat;     
+            background-size:cover;
+        }
+        .feature-pictures .picture img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section class="section-features">
+        <div class="container">
+            <div class="features">
+                <div class="feature">
+                    
+                </div>
+            </div>
+            <div class="feature-pictures">
+                <div class="picture">
+                    <img src="img/feature.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
