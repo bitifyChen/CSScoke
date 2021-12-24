@@ -24,16 +24,19 @@ img {
   --main-color: rgba(218, 193, 155, 0.959);
 }
 /*----section----*/
-.section{
-    padding: 70px 0px;
+.section {
+  padding: 70px 0px;
 }
 /*----section-features----*/
 .section-features .container {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  justify-content: center;
 }
-
+.section-features .features {
+  width: 100%;
+}
 .section-features .feature {
   display: flex;
   width: 100%;
@@ -72,6 +75,8 @@ img {
   order: -1;
   display: flex;
   justify-content: center;
+  border-radius:60px;
+  overflow: hidden;
 }
 .section-features .feature-picture .phone {
   position: relative;
@@ -92,21 +97,72 @@ img {
 }
 
 /*-----RWD-----*/
-/*-----mobile-----*/
-@media screen and (max-width: 575.8px) {
-
-}
 
 /*-----tablets-----*/
-@media screen and (min-width: 576px) {
-  
+@media screen and (max-width: 991.5px) {
+  .section-features .features {
+    max-width: 600px;
+  }
 }
 
 /*-----desktops-----*/
 @media screen and (min-width: 992px) {
+  .section-features .features {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    aspect-ratio: 100/63;
+  }
+  .section-features .feature {
+    width: 30%;
+  }
 
+  .section-features .feature:hover {
+    background-color: rgba(218, 193, 155, 0.8);
+    cursor: pointer;
+  }
+
+  .section-features .feature:hover .info h3,
+  .section-features .feature:hover .info p {
+    color: white;
+  }
+
+  .section-features .feature:nth-of-type(2n + 1) .icon {
+    order: 1;
+  }
+  .section-features .feature:nth-of-type(2n + 1) .info {
+    text-align: right;
+  }
+  .section-features .feature:nth-of-type(2n) {
+    margin-left: 40%;
+  }
+  .section-features .feature-picture {
+    width: 30%;
+    position: absolute;
+  }
+  .section-features .feature-picture .phone {
+    width: 100%;
+  }
 }
 
-/*-----Extra large devices-----*/
-@media screen and (min-width: 1200px) {
+
+/*----Slick----*/
+.slick-slider {
+  display: flex;
+  align-items: center;
+}
+
+.slick-prev,
+.slick-next {
+  padding: 10px;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  opacity: 1;
 }

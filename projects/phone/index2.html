@@ -10,7 +10,7 @@
       integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <title>Document</title>
     <link rel="stylesheet" href="style2.css" />
     <style>
@@ -25,7 +25,7 @@
         <div class="features">
           <div class="feature">
             <div class="info">
-              <h3>visit</h3>
+              <h3>1.visit</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
@@ -34,7 +34,7 @@
           </div>
           <div class="feature">
             <div class="info">
-              <h3>save</h3>
+              <h3>2.save</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
@@ -43,7 +43,7 @@
           </div>
           <div class="feature">
             <div class="info">
-              <h3>explore</h3>
+              <h3>3.explore</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
@@ -52,7 +52,7 @@
           </div>
           <div class="feature">
             <div class="info">
-              <h3>organize</h3>
+              <h3>4.organize</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
@@ -61,7 +61,7 @@
           </div>
           <div class="feature">
             <div class="info">
-              <h3>communicate</h3>
+              <h3>5.communicate</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
@@ -70,23 +70,22 @@
           </div>
           <div class="feature">
             <div class="info">
-              <h3>share</h3>
+              <h3>6.share</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est.</p>
             </div>
             <div class="icon">
               <i class="fas fa-share-alt"></i>
             </div>
           </div>
-        </div>       
+        </div>
         <div class="feature-picture">
           <div class="phone">
-                <img src="img/feature.png" alt="" />
-                <img src="img/feature1.png" alt="" />
-                <img src="img/feature2.png" alt="" />
-                <img src="img/feature3.png" alt="" />
-                <img src="img/feature4.png" alt="" />
-                <img src="img/feature5.png" alt="" />
-                <img src="img/feature6.png" alt="" />
+            <img src="img/feature1.png" alt="" />
+            <img src="img/feature2.png" alt="" />
+            <img src="img/feature3.png" alt="" />
+            <img src="img/feature4.png" alt="" />
+            <img src="img/feature5.png" alt="" />
+            <img src="img/feature6.png" alt="" />
           </div>
         </div>
       </div>
@@ -97,19 +96,64 @@
       integrity="sha512-RbP5+vWnJXWlhYAeHPXGcUHCKAurbkp73RTk7aQZyJw/KeTAQwt1iP6Zt0JFLk0tHdZsu4VqRu0WD+jLqmfyNg=="
       crossorigin="anonymous"
     ></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-      $('.phone').slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows:false,
+      //手機圖片
+      $(".phone").slick({
+        arrows: false,
         fade: true,
       });
 
-      $('.features').slick()
+
+      //文字部分設定檔
+      const slickSetting = {
+        autoplay: true,
+        autoplaySpeed: 4000,
+        prevArrow:
+          "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:
+          "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+      }
+    
+    
+      //文字部分變動 -> 改動手機圖片
+      $(".features").on("beforeChange", function (event, slick, currentSlide, nextSlide) {
+        $(".phone").slick("slickGoTo", nextSlide);
+      });
+
+      //On Resize
+      window.addEventListener("resize", slickCheck); 
+      let slickOn = false
+
+      function slickCheck(){
+        if(window.innerWidth >= 992 && slickOn){
+          slickOn = false;
+          $(".features").slick('unslick');
+        }else if(window.innerWidth < 992 && !slickOn){
+          slickOn = true;
+          //slick 初始化
+          $(".phone").slick("slickGoTo", 0);
+          $(".features").slick(slickSetting);
+        }
+      }
+      slickCheck();
+
+
+      //電腦版 -> hover 項目
+      const featureItems = document.querySelectorAll('.feature')
+      featureItems.forEach((item,index) =>{
+        item.addEventListener('mouseenter',()=>{
+          if(!slickOn){
+            $(".phone").slick("slickGoTo", index );
+          }
+        })
+      })
+
     </script>
   </body>
 </html>
-
-
