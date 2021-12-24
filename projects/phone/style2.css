@@ -1,0 +1,112 @@
+/*-----RESET-----*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/*----Color----*/
+:root {
+  --main-color: rgba(218, 193, 155, 0.959);
+}
+/*----section----*/
+.section{
+    padding: 70px 0px;
+}
+/*----section-features----*/
+.section-features .container {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.section-features .feature {
+  display: flex;
+  width: 100%;
+  margin: 20px 0px;
+  padding: 20px;
+  align-items: center;
+}
+
+.section-features .feature .info {
+  padding: 0 20px;
+}
+.section-features .feature .info h3 {
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+.section-features .feature .info p {
+  font-size: 14px;
+  color: rgb(75, 73, 73);
+}
+.section-features .feature .icon {
+  background-color: var(--main-color);
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  order: -1;
+}
+
+.section-features .feature-picture {
+  width: 100%;
+  order: -1;
+  display: flex;
+  justify-content: center;
+}
+.section-features .feature-picture .phone {
+  position: relative;
+  width: 200px;
+}
+.section-features .feature-picture .phone:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/iphone.png") no-repeat;
+  background-size: cover;
+}
+.section-features .feature-picture .phone img {
+  width: 100%;
+}
+
+/*-----RWD-----*/
+/*-----mobile-----*/
+@media screen and (max-width: 575.8px) {
+
+}
+
+/*-----tablets-----*/
+@media screen and (min-width: 576px) {
+  
+}
+
+/*-----desktops-----*/
+@media screen and (min-width: 992px) {
+
+}
+
+/*-----Extra large devices-----*/
+@media screen and (min-width: 1200px) {
+}
