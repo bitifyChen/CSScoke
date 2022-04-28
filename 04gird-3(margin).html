@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        max-width: 1200px;
+        margin: auto;
+    }
+    [class*="col-"]{
+        --col-margin : 15px;
+        margin: 0 var(--col-margin);
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .col-1 {width: calc( 100% / 12 * 1 - 2 * var(--col-margin));}
+    .col-2 {width: calc( 100% / 12 * 2 - 2 * var(--col-margin));}
+    .col-3 {width: calc( 100% / 12 * 3 - 2 * var(--col-margin));}
+    .col-4 {width: calc( 100% / 12 * 4 - 2 * var(--col-margin));}
+    .col-5 {width: calc( 100% / 12 * 5 - 2 * var(--col-margin));}
+    .col-6 {width: calc( 100% / 12 * 6 - 2 * var(--col-margin));}
+    .col-7 {width: calc( 100% / 12 * 7 - 2 * var(--col-margin));}
+    .col-8 {width: calc( 100% / 12 * 8 - 2 * var(--col-margin));}
+    .col-9 {width: calc( 100% / 12 * 9 - 2 * var(--col-margin));}
+    .col-10{width: calc( 100% / 12 * 10 - 2 * var(--col-margin));}
+    .col-11{width: calc( 100% / 12 * 11 - 2 * var(--col-margin));}
+    .col-12{width: 100% }
+</style>
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">123</div>
+                <div class="col-6">22</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
