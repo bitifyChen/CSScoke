@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /*--Reset--*/
+    img {
+        vertical-align: middle;
+    }
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .sr-only {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+
+    /*--Reset--*/
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #ececec;
+    }
+
+    /*共用*/
+    .main-header {
+        background-color: #fff;
+    }
+
+    .main-header .container {
+        position: relative;
+        display: flex;
+        margin: auto;
+    }
+
+    #menu-control {
+        display: none;
+    }
+
+    /*Cart*/
+    .cart a{
+        display: flex;
+        align-items: center;
+    }
+    .cart img {
+        height: 26px;
+    }
+    .cart span{
+        margin-left: 5px;
+        font-size: 12px;
+        color: #007bff;
+    }
+
+    /*手機專用*/
+    @media screen and (max-width:989px) {
+        .main-header{
+            position: sticky;
+        }
+        .main-header .container {
+            align-items: center;
+            height: 70px;
+            margin: 0px 15px;
+        }
+
+        /*Logo*/
+        .logo img {
+            height: 50px;
+        }
+
+        /*Button-Menu*/
+        .btn-menu {
+            height: 26px;
+            width: 26px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .btn-menu::before,
+        .btn-menu::after,
+        .btn-menu span::before {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 100%;
+            display: block;
+            background-color: #868686;
+        }
+
+        .btn-menu::before {
+            top: 2px;
+            transition: top .5s .5s,transform .5s;
+        }
+
+        .btn-menu span::before {
+            opacity: 1;
+            top: 12px;
+            transition: opacity .5s .5s;
+        }
+
+        .btn-menu::after {
+            bottom: 2px;
+            transition: bottom .5s .5s,transform .5s;
+        }
+
+        #menu-control:checked~.btn-menu::before {
+            top: 12px;
+            transform: rotate(225deg);
+            transition: top .5s,transform .5s .5s;
+        }
+
+        #menu-control:checked~.btn-menu span::before {
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        #menu-control:checked~.btn-menu::after {
+            bottom: 12px;
+            transform: rotate(315deg);
+            transition: bottom .5s,transform .5s .5s;
+        }
+
+        /*Nav.main-nav*/
+        .main-nav {  
+            position: absolute;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        #menu-control:checked~.main-nav {
+            top: 100%;
+            left: 0;
+            right: 0;
+            max-height: 700px;
+            background-color: white;
+            box-shadow: 0 15px 20px 0 rgb(0 0 0 / 10%);
+            transition: max-height 1s;
+        }
+
+        .main-nav li a {
+            display: block;
+            font-size: 20px;
+            padding: 5px;
+            color: #868686;
+            text-align: center;
+        }
+
+        /*Cart*/
+        .cart {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+    }
+
+    /*平板*/
+    @media screen and (min-width:990px) {
+        .main-header .container {
+            flex-wrap: wrap;
+            max-width: 960px;
+        }
+
+        /*Logo*/
+        .logo {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0px;
+        }
+
+        .logo img {
+            height: 60px;
+        }
+
+        /*Button-Menu*/
+        .btn-menu {
+            display: none;
+        }
+
+        /*Nav.main-nav*/
+        .main-nav {
+            width: 100%;
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .main-nav li a {
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #868686;
+            padding: 10px 5px;
+        }
+
+        .main-nav li a:hover {
+            color: black;
+        }
+
+        /*Cart*/
+        .cart {
+            position: absolute;
+            right: 0;
+            top: 35px;
+
+        }
+
+        .cart img {
+            height: 30px;
+        }
+    }
+
+    /*電腦*/
+    @media screen and (min-width:1200px) {
+        .main-header .container {
+            flex-wrap: no-wrap;
+            max-width: 1140px;
+            align-items: center;
+        }
+        /*Logo*/
+        .logo {
+            width: auto;
+        }
+
+        /*Nav.main-nav*/
+        .main-nav {
+            margin: auto;
+            width: auto;
+        }
+        .main-nav li a {
+            padding: 10px 20px;
+        }
+         /*Cart*/
+         .cart {
+            position:static;
+
+         }
+    }
+</style>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <input type="checkbox" id="menu-control">
+            <a href="#" class="logo">
+                <h1 class="sr-only">天下文化</h1>
+                <img src="img/logo.png" alt="">
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">瓦基說書特選</a>
+                    </li>
+                    <li>
+                        <a href="#">名人傳記</a>
+                    </li>
+                    <li>
+                        <a href="#">職場即戰</a>
+                    </li>
+                    <li>
+                        <a href="#">致富心態</a>
+                    </li>
+                    <li>
+                        <a href="#">社科思辨</a>
+                    </li>
+                    <li>
+                        <a href="#">科學奇蹟</a>
+                    </li>
+                    <li>
+                        <a href="#">購物說明</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart">
+                <a href="#">
+                    <img src="img/cart.png" alt="" class="cart-img">
+                    <span class="cart-num">0</span>
+                </a>
+            </div>
+            <label for="menu-control" class="btn-menu">
+                <span></span>
+            </label>
+        </div>
+    </header>
+</body>
+
+</html>
