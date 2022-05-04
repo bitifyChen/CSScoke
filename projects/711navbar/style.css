@@ -6,6 +6,7 @@
 
 body {
   background-color: pink;
+  overflow-x: hidden;
 }
 
 .main-header {
@@ -22,7 +23,8 @@ body {
     height: 60px;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
+    top: 0;
   }
   /* Logo */
   .logo {
@@ -56,30 +58,30 @@ body {
   }
   .menu::before {
     top: 30%;
-    transition: top .5s .5s, transform .5s;
+    transition: top 0.5s 0.5s, transform 0.5s;
   }
   .menu::after {
     top: calc(50% - 1.5px);
-    transition: width .5s .5s;
+    transition: width 0.5s 0.5s;
   }
   .menu span::before {
     bottom: 30%;
-    transition:bottom .5s .5s, transform .5s;
+    transition: bottom 0.5s 0.5s, transform 0.5s;
   }
   /* Menu--open */
-  #memu-check:checked ~ .menu::before{
+  #memu-check:checked ~ .menu::before {
     top: calc(50% - 1.5px);
     transform: rotate(225deg);
-    transition: top .5s .5s, transform 1s .5s;
+    transition: top 0.5s 0.5s, transform 1s 0.5s;
   }
-  #memu-check:checked ~ .menu::after{
+  #memu-check:checked ~ .menu::after {
     width: 0;
-    transition: width .5s;
+    transition: width 0.5s;
   }
-  #memu-check:checked ~ .menu span::before{
+  #memu-check:checked ~ .menu span::before {
     bottom: calc(50% - 1.5px);
     transform: rotate(135deg);
-    transition:bottom .5s .5s, transform 1s .5s;
+    transition: bottom 0.5s 0.5s, transform 1s 0.5s;
   }
 
   /* Nav */
@@ -90,7 +92,7 @@ body {
     background-color: white;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .4s;
+    transition: max-height 0.4s;
   }
 
   #memu-check:checked ~ .main-nav {
@@ -99,73 +101,77 @@ body {
     transition: max-height 1s;
   }
 
-  .main-nav .item > a,.main-nav .item label{
+  .main-nav .item > a,
+  .main-nav .item label {
     display: block;
     padding: 16px 10%;
     font-size: 18px;
-    letter-spacing: .25em;
-    border-bottom: 1px solid #d3d3d3 ;
+    letter-spacing: 0.25em;
+    border-bottom: 1px solid #d3d3d3;
   }
-   /* Nav--二層選單 */
-  .main-nav .drop-down label{
+  /* Nav--二層選單 */
+  .main-nav .drop-down label {
     position: relative;
   }
   /* Nav--二層選單--圖示 */
-  .main-nav .drop-down label::before,.main-nav .drop-down label::after{
-    content: '';
+  .main-nav .drop-down label::before,
+  .main-nav .drop-down label::after {
+    content: "";
     display: block;
     background-color: gray;
     position: absolute;
-    transition: all .3s linear;
+    transition: all 0.3s linear;
   }
-  .main-nav .drop-down label::before{
+  .main-nav .drop-down label::before {
     width: 20px;
     height: 2px;
     top: calc(50% - 1px);
     right: 10%;
   }
-  .main-nav .drop-down label::after{
+  .main-nav .drop-down label::after {
     width: 2px;
     height: 20px;
     top: calc(50% - 10px);
-    right: calc( 10% + 9px) ;
+    right: calc(10% + 9px);
   }
   /* Nav--二層選單--內容 */
-  .main-nav .drop-down ul{
+  .main-nav .drop-down ul {
     background-color: #f8e4d3;
     max-height: 0;
     overflow: hidden;
-    transition: max-height .4s;
+    transition: max-height 0.4s;
   }
-  .main-nav .drop-down li{
+  .main-nav .drop-down li {
     padding: 14px 10%;
     font-size: 14px;
-    letter-spacing: .1em;
-    border-bottom: 1px solid #d3d3d3 ;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #d3d3d3;
   }
-  .main-nav .drop-down li::before{
-    content: ' > ';
+  .main-nav .drop-down li::before {
+    content: " > ";
     padding-right: 5px;
   }
+  .main-nav .drop-down span{
+    display: none;
+  }
   /* Nav--二層選單--open */
-  input[id*= drop-down-]:checked + .drop-down ul{
+  input[id*="drop-down-"]:checked + .drop-down ul {
     max-height: 800px;
     transition: max-height 1s;
   }
   /* Nav--二層選單--open-圖示 */
-  input[id*= drop-down-]:checked + .drop-down label::before{
+  input[id*="drop-down-"]:checked + .drop-down label::before {
     transform: rotate(180deg);
   }
-  input[id*= drop-down-]:checked + .drop-down label::after{
+  input[id*="drop-down-"]:checked + .drop-down label::after {
     transform: rotate(90deg);
   }
-
 
   /* Links */
   .links .desktop {
     display: none;
   }
-  .links{
+  .links {
     z-index: 1;
     position: relative;
   }
@@ -184,34 +190,164 @@ body {
     justify-content: center;
   }
 
-  .mobile-links li span{
+  .mobile-links li span {
     font-size: 12px;
     color: var(--link-color);
   }
 
   .mobile-links li:nth-child(1) {
-   background-image: url('img/icon_a.png');
-   --link-color:red
+    background-image: url("img/icon_a.png");
+    --link-color: red;
   }
   .mobile-links li:nth-child(2) {
-    background-image: url('img/icon_b.png');
-    --link-color:orange
+    background-image: url("img/icon_b.png");
+    --link-color: orange;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  main {
+    padding-left: 200px;
+    margin-top: -100vh;
+  }
   .main-header {
+    position: sticky;
+    width: 200px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
   }
   /* Menu */
   .menu {
     display: none;
   }
+  /* Logo */
+  .logo{
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo img {
+    width: 120px;
+  }
   /* Nav */
-  .main-nav {
+  .main-nav .item > a,
+  .main-nav .item label {
+    display: block;
+    padding: 16px 42px;
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    cursor: pointer;
+  }
+  .main-nav .item:hover{
+    background-color:#f8e4d3;
+  }
+  /* Nav--二層選單 */
+  .main-nav .drop-down label {
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Nav--二層選單--圖示 */
+
+  .main-nav .drop-down label::after {
+    content: ">";
+    display: block;
+    transition: all 0.3s linear;
+    right: 0;
+    top: 0;
   }
 
+  /* Nav--二層選單--內容 */
+  .main-nav .drop-down ul {
+    display:none;
+    background-color: #f8e4d3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 200px;
+  }
+  .main-nav .drop-down span{
+    height: 45px;
+    font-size: 20px;
+    letter-spacing: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px black solid;
+    margin: 20px;
+  }
+  .main-nav .drop-down li {
+    padding: 14px 10%;
+    font-size: 16px;  
+    cursor: pointer;
+  }
+
+  .main-nav .drop-down li:hover {
+    background-color: #f4e0d1;  
+  }
+  /* Nav--二層選單--open */
+  .drop-down:hover{
+    background-color: #f8e4d3;
+  }
+  .drop-down:hover ul {
+   display: block;
+   width: 100%;
+  }
   /* Links */
   .links .mobile {
     display: none;
   }
+  .links .socail-links{
+    margin-left: 42px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .links .socail-links li{
+    display: inline-block;
+    margin: 0 5px;
+  }
+  .links .socail-links li a{
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .links .socail-links li:nth-of-type(1) a{
+    background: url('img/icon.png') no-repeat 0 0 ;
+  }
+  .links .socail-links li:nth-of-type(2) a{
+    background: url('img/icon.png') no-repeat -37px 0;
+  }
+  .links .other-links a{
+    background: url('img/logo_ichannel.png') no-repeat center center;
+    width: 100%;
+    height: 20px;
+    display: block;
+  }
+}
+
+
+/*--不重要--*/
+.section-banner img{
+  width: 100%;
+}
+
+.section-sell{
+  padding: 20px 0px;
+}
+.section-sell .title{
+  font-size: 30px;
+  padding: 20px 0px;
+}
+.section-sell .boxs{
+  display: flex;
+}
+.section-sell .boxs .box{
+  width: 25%;
+}
+.section-sell .box img{
+  width:100%
 }
