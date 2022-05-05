@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%, 100% 80%, 0 80%, 0 60%, 100% 60%, 100% 40%, 0 40%, 0 20%, 100% 20%);
+            animation-direction: reverse;
+            animation:move 1s ;
+           
+        }
+
+        .box:hover{
+            animation:move 1s ;
+        }
+
+
+
+        @keyframes move {
+            0% {
+                clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%, 100% 80%, 0 80%, 0 60%, 100% 60%, 100% 40%, 0 40%, 0 20%, 100% 20%);
+            }
+            100% {
+                clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">1</div>
+
+</body>
+
+</html>
