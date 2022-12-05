@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mv {
+        width: 50%;
+
+    }
+
+    .mv iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 560/315;
+        vertical-align: top;
+    }
+</style>
+
+<style>
+    .wrap {
+        /* width: 1000px; */
+        background-color: #ccc;
+    }
+
+    .mv2 {
+        width: 50%;
+        height: 0px;
+        padding-bottom: 50%;
+        /*參照父層寬度*/
+        background-color: red;
+    }
+</style>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+    }
+
+    .mv3 {
+        width: 500px;
+        position: relative;
+    }
+
+    .mv3::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-bottom: 56.25%;
+    }
+
+    .mv3 iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .text {
+        width: 50%;
+    }
+</style>
+
+<body>
+    <!-- new -->
+    <!-- <div class="mv">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/BEeFfM2bQEM" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div> -->
+
+    <!-- old -->
+    <!-- <div class="wrap">
+        <div class="mv2">
+
+        </div>
+    </div> -->
+
+    <!--old2 -->
+
+    <div class="container">
+        <div class="row">
+            <div class="mv3">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BEeFfM2bQEM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis sapiente placeat ea qui illum, nisi
+                consectetur est temporibus quod, ullam cumque aut ipsum vitae. Earum nisi, perferendis incidunt deserunt
+                similique consequuntur? Aliquam nobis iure repudiandae, laborum eligendi rerum similique itaque dolore
+                aut nostrum inventore voluptate reiciendis, vero officiis! Velit, itaque?
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

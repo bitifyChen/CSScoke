@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header {
+            height: 40px;
+            width: 100%;
+            background-color: gray;
+            padding: 10px;
+            position: relative;
+        }
+
+        .hb {
+            width: 30px;
+            height: 30px;
+            background-color: black;
+        }
+
+        .main-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            background-color: red;
+            left: 0;
+        }
+
+        .main-nav.active {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-header">
+        <div class="hb">
+
+        </div>
+        <nav class="main-nav">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </nav>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    $(".hb").click(menuShow);
+
+    function menuShow() {
+        $('.main-nav').toggleClass('active')
+    }
+
+
+</script>
+
+</html>
